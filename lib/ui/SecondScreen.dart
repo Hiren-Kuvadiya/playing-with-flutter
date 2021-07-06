@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/main.dart';
-
-import 'StreamUtil.dart';
+import 'package:flutter_app/ui/main.dart';
+import 'package:flutter_app/utils/StreamUtil.dart';
 
 class SecondScreen extends StatelessWidget {
-
   String value;
   Map<String, dynamic> receivedMap;
   int mIndex;
@@ -31,7 +29,6 @@ class SecondScreen extends StatelessWidget {
     print("SENT_INDEX $mIndex");
     print("SENT_LIST $mList");
 
-
     showTheDialog() {
       showDialog(
           context: context,
@@ -44,7 +41,6 @@ class SecondScreen extends StatelessWidget {
                 child: Form(
                   child: Column(
                     children: <Widget>[
-
                       TextFormField(
                         controller: editTextController,
                         decoration: InputDecoration(
@@ -52,12 +48,10 @@ class SecondScreen extends StatelessWidget {
                           icon: Icon(Icons.account_box),
                         ),
                       )
-
                     ],
                   ),
                 ),
               ),
-
               actions: [
                 RaisedButton(
                     child: Text("Submit"),
@@ -85,7 +79,7 @@ class SecondScreen extends StatelessWidget {
           children: [
             Center(
                 child: TextField(
-                  controller: mEditTextController,
+              controller: mEditTextController,
               decoration: InputDecoration(labelText: mList[mIndex]),
             )),
             Row(
@@ -93,42 +87,27 @@ class SecondScreen extends StatelessWidget {
               children: [
                 RaisedButton(
                   onPressed: () {
-
                     mList.removeAt(mIndex);
                     Navigator.pop(context, mList);
-
                   },
                   child: Text("Delete"),
                 ),
-
                 RaisedButton(
                   onPressed: () {
-
                     mList[mIndex] = mEditTextController.text;
                     Navigator.pop(context, mList);
-
                   },
                   child: Text("update"),
                 ),
-
                 RaisedButton(
                   onPressed: () {
                     showTheDialog();
                   },
                   child: Text("add"),
                 )
-
-
               ],
             )
           ],
         ));
-
-
-
-
   }
-
-
-
 }
