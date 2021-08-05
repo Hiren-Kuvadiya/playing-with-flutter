@@ -3,8 +3,11 @@ import 'package:flutter_app/utils/MyDimensions.dart';
 
 class RoundedCornerImage extends StatelessWidget {
   final String imageUrl;
+  final double imageSize;
 
-  const RoundedCornerImage({Key key, this.imageUrl}) : super(key: key);
+ // const RoundedCornerImage({Key key, this.imageUrl}) : super(key: key);
+
+  const RoundedCornerImage({Key key, this.imageUrl, this.imageSize}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
